@@ -14,7 +14,7 @@ def iris_type(s):
     it = {b'Iris-setosa': 0, b'Iris-versicolor': 1, b'Iris-virginica': 2}
     return it[s]
 
-path ='D:\iris_data.txt'  # 之前保存的文件路径
+path ='D:\iris\iris_data.txt'  # 之前保存的文件路径
 data = np.loadtxt(path,                          # 路径
                   dtype=float,                   # 数据类型
                   delimiter=',',                 # 数据以什么分割符号分割数据
