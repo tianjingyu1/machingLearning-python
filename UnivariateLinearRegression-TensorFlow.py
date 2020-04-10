@@ -9,7 +9,7 @@ import tensorflow as tf # 载入Tensorflow
 # 设置随机数种子
 np.random.seed(5)
 
-# 直接采用np生成等差数列的方法，生成100个点，每个店的取值在-1~1之间
+# 直接采用np生成等差数列的方法，生成100个点，每个点的取值在-1~1之间
 x_data = np.linspace(-1, 1, 100)
 
 # y = 2x + 1 + 噪声，其中，噪声的维度与x_data一致
