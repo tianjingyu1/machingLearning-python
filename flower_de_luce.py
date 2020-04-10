@@ -14,7 +14,7 @@ def iris_type(s):
     it = {b'Iris-setosa': 0, b'Iris-versicolor': 1, b'Iris-virginica': 2}
     return it[s]
 
-path ='D:\iris\iris_data.txt'  # 之前保存的文件路径
+path ='D:\machineLearning-python\iris_data.txt'  # 之前保存的文件路径
 data = np.loadtxt(path,                          # 路径
                   dtype=float,                   # 数据类型
                   delimiter=',',                 # 数据以什么分割符号分割数据
@@ -48,4 +48,3 @@ plt.scatter(x_train[:, 0], x_train[:, 1], c=y_train.reshape((-1)), edgecolors='k
 plt.subplot(122)
 plt.scatter(x_train[:, 0], x_train[:, 1], c=y_train_hat.reshape((-1)), edgecolors='k',s=50)
 plt.show()
-
