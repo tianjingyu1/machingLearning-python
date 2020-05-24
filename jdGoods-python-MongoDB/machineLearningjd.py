@@ -1,5 +1,4 @@
 import pandas as pd
-import matplotlib.pyplot as plt
 import pymongo
 import numpy as np
 import matplotlib.pyplot as plt
@@ -44,10 +43,10 @@ str4=str3.replace("\\t\\n","")
 str5=str4.replace("\"","")
 str6=str5.replace("[","")
 #print(str6)
-wordList_jieba1 = jieba.cut(str6, cut_all=False); # 使用jieba分词
-data1 = ','.join(wordList_jieba1);
-font = r'C:\Windows\Fonts\STXINWEI.TTF'; # 设置字体为华文新魏
-wc1 = WordCloud(font_path=font).generate(data1); # 商品信息词云
+wordList_jieba1 = jieba.cut(str6, cut_all=False) # 使用jieba分词
+data1 = ','.join(wordList_jieba1)
+font = r'C:\Windows\Fonts\STXINWEI.TTF' # 设置字体为华文新魏
+wc1 = WordCloud(font_path=font).generate(data1) # 商品信息词云
 plt.imshow(wc1, interpolation='bilinear')
 plt.axis("off")
 plt.show()
@@ -62,6 +61,17 @@ plt.plot(price,shop,"o")
 #展示x，y轴标签
 plt.xlabel('price')
 plt.ylabel('shop')
+plt.show()
+
+# 箱图价格
+fig1 = plt.figure(figsize=(3,3))
+#初始化两个子图，分布为一行两列
+ax1 = fig1.add_subplot(1,2,1)
+#绘制箱型图
+ax1.boxplot(price)
+ax1.set_xlabel('price')
+#设置x，y轴取值范围
+ax1.set_ylim(0,1000)
 plt.show()
 
 # 价格直方图
@@ -88,4 +98,11 @@ for i in range(len(ShopCluster)):
     print("price:%.2f" % expenses[i])
     print(ShopCluster[i])
 
-# 对价格进行非线性回归
+# 聚类结果可视化
+
+# 绘图
+import matplotlib.pyplot as plt
+
+plt.scatter(price1, shop, c=label, marker='x', s=100)
+plt.title("KMeans")
+plt.show()
