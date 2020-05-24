@@ -28,7 +28,7 @@ if __name__ == '__main__':
     studentNumber,dormitoryNumber,gender,achievement,averageScore,rank = loadData('四学期成绩汇总.txt')
     km = KMeans(n_clusters=9)
     #averageScore = np.array(averageScore).reshape(1, -1)
-    print(averageScore)
+    #print(averageScore)
     label = km.fit_predict(averageScore)
     averageScoreShow = np.sum(km.cluster_centers_, axis=1)
     dormitoryNumberShow = [[], [], [], [],[],[],[],[],[]]
